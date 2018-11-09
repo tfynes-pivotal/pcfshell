@@ -16,6 +16,7 @@ jq
 ...
 
 Single instance mode - just push 'PcfShellInstances' to an org/space - NOTE - modify PcfShellInstances/bin/haproxy/haproxy.conf to ensure your default password is unique
+			default username - pcfuser
 
 Scaled mode -
 	Push PcfShellInstances app to an org/space
