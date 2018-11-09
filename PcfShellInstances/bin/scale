@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# push cloned application
+
+# if not present, download cvsshell droplet
+pushd /tmp
+if [ ! -f /tmp/cvsshell.droplet ]; then
+  echo 'Downloading cvsshell droplet to /tmp'
+  cf local pull cvsshell
+fi
+
+# create new application
+cf v3-create-app $1 && \
+ln /tmp/cvsshell.droplet /tmp/$1.droplet && \
+cf local push $1 -k && \
+cf map-route $1 $2 --hostname $1 && \
+cf scale -m 2G -k 2G $1 -f && \
+rm /tmp/$1.droplet & 
+popd
+

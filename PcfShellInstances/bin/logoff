@@ -1,0 +1,4 @@
+#!/bin/bash 
+SiabPid=$(ps -eaf | grep -m 1 shellinaboxd | awk '{print $2;}')
+echo "SiabPid = $SiabPid"
+kill $SiabPid

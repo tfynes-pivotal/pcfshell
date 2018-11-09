@@ -1,0 +1,46 @@
+export PATH=$PATH:/home/vcap/app/bin 
+echo **** INITIALIZING SHELL ****
+echo      INSTALLING CF CLI
+#export CF_HOME=$(mktemp -d)
+export TERM=xterm
+export TMPDIR=/tmp
+cf install-plugin /home/vcap/app/bin/top-plugin-linux64 -f
+cf install-plugin /home/vcap/app/bin/cflocal-0.19.0-linux -f
+cf api api.run.pivotal.io
+export GEM_HOME=/home/vcap/app/bin/rubygems/gems
+export PATH=$PATH:/home/vcap/app/bin/rubygems/gems/bin
+pushd /home/vcap/app/bin
+if [ ! -d "/home/vcap/app/bin/jdk-11.0.1" ]; then
+  echo      EXTRACTING JVM / GFSH 
+  tar zxf /home/vcap/app/bin/openjdk-11.0.1_linux-x64_bin.tar.gz
+fi
+if [ ! -d "/home/vcap/app/bin/pivotal-gemfire-9.3.0" ]; then
+  tar zxf /home/vcap/app/bin/pivotal-gemfire-9.3.0.tgz
+  echo      EXTRACTING RUBYGEMS for UAAC
+  tar zxf /home/vcap/app/bin/rubygems.tgz
+fi
+popd
+export JAVA_HOME=/home/vcap/app/bin/jdk-11.0.1
+export PATH=$PATH:$JAVA_HOME/bin
+export PATH=$PATH:/home/vcap/app/bin/pivotal-gemfire-9.3.0/bin
+export GF_JAVA=/home/vcap/app/bin/jdk-11.0.1/bin/java
+if [ ! -d "/home/vcap/app/bin/libs/usr/lib/x86_64-linux-gnu" ]; then
+  echo      EXTRACTING MYSQL-SHELL
+  dpkg -x /home/vcap/app/bin/libs/libprotobuf8_2.5.0-9ubuntu1_amd64.deb /home/vcap/app/bin/libs
+  dpkg -x /home/vcap/app/bin/libs/libpython2.7_2.7.6-8ubuntu0.4_amd64.deb /home/vcap/app/bin/libs
+  dpkg -x /home/vcap/app/bin/libs/mysql-shell_1.0.11-1ubuntu14.04_amd64.deb /home/vcap/app/bin/libs
+fi
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/vcap/app/bin/libs/usr/lib/x86_64-linux-gnu
+export PATH=$PATH:/home/vcap/app/bin/libs/usr/bin
+export PATH=$PATH:/home/vcap/app/bin/banner
+echo     READY
+clear
+banner "PCF Shell"
+echo "alpha v0.2"
+echo
+echo "cf-cli, cf-top, pks-cli, kubectl, om-cli, bosh, gfsh, mysqlsh, fly-cli, uaac  - all ready to rock"
+echo
+echo "setpassword" to change this instance password.
+echo "logoff" to reset this instance.
+echo
+export PS1='PCFSHELL>'

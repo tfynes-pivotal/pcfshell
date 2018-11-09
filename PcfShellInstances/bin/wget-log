@@ -1,0 +1,16 @@
+--2018-07-05 11:17:59--  https://packages.cloudfoundry.org/stable?release=linux64-binary
+Resolving packages.cloudfoundry.org (packages.cloudfoundry.org)... 54.236.155.168, 52.204.0.74
+Connecting to packages.cloudfoundry.org (packages.cloudfoundry.org)|54.236.155.168|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://s3-us-west-1.amazonaws.com/cf-cli-releases/releases/v6.37.0/cf-cli_6.37.0_linux_x86-64.tgz [following]
+--2018-07-05 11:17:59--  https://s3-us-west-1.amazonaws.com/cf-cli-releases/releases/v6.37.0/cf-cli_6.37.0_linux_x86-64.tgz
+Resolving s3-us-west-1.amazonaws.com (s3-us-west-1.amazonaws.com)... 52.219.20.29
+Connecting to s3-us-west-1.amazonaws.com (s3-us-west-1.amazonaws.com)|52.219.20.29|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 6005188 (5.7M) [application/x-tar]
+Saving to: ‘stable?release=linux64-binary’
+
+stable?release=linux64-binary                   0%[                                                                                               ]       0  --.-KB/s               stable?release=linux64-binary                   0%[                                                                                               ]  41.59K   186KB/s               stable?release=linux64-binary                   2%[=>                                                                                             ] 143.59K   323KB/s               stable?release=linux64-binary                   7%[======>                                                                                        ] 466.59K   698KB/s               stable?release=linux64-binary                  20%[==================>                                                                            ]   1.19M  1.33MB/s               stable?release=linux64-binary                  41%[======================================>                                                        ]   2.36M  2.12MB/s               stable?release=linux64-binary                  69%[=================================================================>                             ]   4.01M  2.99MB/s               stable?release=linux64-binary                 100%[==============================================================================================>]   5.73M  3.84MB/s    in 1.5s    
+
+2018-07-05 11:18:01 (3.84 MB/s) - ‘stable?release=linux64-binary’ saved [6005188/6005188]
+
