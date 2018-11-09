@@ -1,2 +1,0 @@
-# pcfshell
-gShell for PCF

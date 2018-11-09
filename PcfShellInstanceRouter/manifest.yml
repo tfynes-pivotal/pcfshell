@@ -1,0 +1,7 @@
+---
+applications:
+- name: pshelltest
+  memory: 1024M
+  path: target/PcfInstancesRouter-0.0.1-SNAPSHOT.jar
+  env:
+    zuul.routes.primary.url: http://pcfshell.apps.internal:8080
