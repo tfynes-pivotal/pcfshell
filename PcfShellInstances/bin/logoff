@@ -1,4 +1,2 @@
 #!/bin/bash 
-SiabPid=$(ps -eaf | grep -m 1 shellinaboxd | awk '{print $2;}')
-echo "SiabPid = $SiabPid"
-kill $SiabPid
+ps -eaf | grep -v grep | grep shellinaboxd | awk '{print $2;}' | while read line; do kill -9 $line;done
