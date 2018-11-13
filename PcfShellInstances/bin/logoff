@@ -1,2 +1,2 @@
 #!/bin/bash 
-ps aux | grep -v grep | grep shellinaboxd | awk '{print $2;}' | while read line; do kill -9 $line;done
+ps aux | grep -v grep | grep shell | awk '{print $2;}' | while read line; do kill -9 $line;done
