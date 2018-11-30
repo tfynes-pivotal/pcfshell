@@ -4,6 +4,5 @@ zuul:
       sensitiveHeaders: Cookie,Set-Cookie
       path: /**
       url: http://hr.internal.fynesy.com:8080      
-      #timeout: 60000
   host:
      socket-timeout-millis: 600000
