@@ -6,6 +6,7 @@ export TERM=xterm
 export TMPDIR=/tmp
 cf install-plugin /home/vcap/app/bin/top-plugin-linux64 -f
 cf install-plugin /home/vcap/app/bin/cflocal-0.19.0-linux -f
+cf install-plugin /home/vcap/app/bin/mysql-plugin-linux-amd64 -f
 cf api api.run.pivotal.io
 export GEM_HOME=/home/vcap/app/bin/rubygems/gems
 export PATH=$PATH:/home/vcap/app/bin/rubygems/gems/bin
