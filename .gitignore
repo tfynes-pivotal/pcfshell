@@ -1,5 +1,5 @@
-PcfShellInstances/bin/openjdk-11.0.1_linux-x64_bin.tar.gz
-PcfShellInstances/bin/pivotal-gemfire-9.3.0.tgz
+PcfShellInstances/bin/openjdk-12.0.1_linux-x64_bin.tar.gz
+PcfShellInstances/bin/pivotal-gemfire-9.8.1.tgz
 PcfShellInstanceRouter/.classpath
 PcfShellInstanceRouter/.project
 PcfShellInstanceRouter/.settings

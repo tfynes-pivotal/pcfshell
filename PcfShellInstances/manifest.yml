@@ -3,4 +3,7 @@ applications:
 - name: pcfshellinstances
   memory: 2048M
   disk_quota: 2G
-  buildpack: binary_buildpack
+  buildpacks: 
+  - binary_buildpack
+  routes:
+  - route: pcfshellinstances.apps.internal

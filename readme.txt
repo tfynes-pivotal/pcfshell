@@ -4,15 +4,20 @@ Useful commands
 
 cf-cli
 cf top
+cf bg-restage
+cf mysql-tools
+cf local
+credhub
 kubectl
 om-cli
 bosh
 gfsh
-uaac
 mysqlsh
 fly-cli
+uaa-cli
 git
 jq
+pks
 ...
 
 Single instance mode - just push 'PcfShellInstances' to an org/space - NOTE - modify PcfShellInstances/bin/haproxy/haproxy.conf to ensure your default password is unique
@@ -33,7 +38,7 @@ User should call 'logout' script to reset instance at end of session.
 
 
 NOTE: OpenJDK and PiotalGemfire not included;	
-		openjdk-11.0.1_linux-x64_bin.tar.gz  ( https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_linux-x64_bin.tar.gz )
-		pivotal-gemfire-9.3.0.tgz  ( https://network.pivotal.io/products/pivotal-gemfire#/releases/40937 )
+		openjdk-12.0.1_linux-x64_bin.tar.gz 
+		pivotal-gemfire-9.8.1.tgz 
 
 Download these assets and them to the PcfShellInstances/bin folder
