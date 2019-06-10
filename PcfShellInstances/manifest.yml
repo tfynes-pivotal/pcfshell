@@ -6,4 +6,4 @@ applications:
   buildpacks: 
   - binary_buildpack
   routes:
-  - route: tmfpcfshellinstances.apps.internal
+  - route: pcfshellinstances.apps.internal
