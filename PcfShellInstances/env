@@ -5,31 +5,48 @@ echo      INSTALLING CF CLI
 export TERM=xterm
 export TMPDIR=/tmp
 cf install-plugin /home/vcap/app/bin/top-plugin-linux64 -f
+rm -f /home/vcap/app/bin/top-plugin-linux64 
 cf install-plugin /home/vcap/app/bin/cflocal-0.19.0-linux -f
+rm -f /home/vcap/app/bin/cflocal-0.19.0-linux 
 cf install-plugin /home/vcap/app/bin/mysql-plugin-linux-amd64 -f
+rm -f /home/vcap/app/bin/mysql-plugin-linux-amd64 
 cf install-plugin /home/vcap/app/bin/cf-plugin-bg-restage_linux_amd64 -f
+rm -f /home/vcap/app/bin/cf-plugin-bg-restage_linux_amd64 
+cf install-plugin /home/vcap/app/bin/scheduler-for-pcf-cliplugin-linux64-binary-1.1.0 -f
+rm -f /home/vcap/app/bin/scheduler-for-pcf-cliplugin-linux64-binary-1.1.0 
+cf install-plugin /home/vcap/app/bin/spring-cloud-dataflow-for-pcf-cli-plugin-linux-386-1.0.0 -f
+rm -f /home/vcap/app/bin/spring-cloud-dataflow-for-pcf-cli-plugin-linux-386-1.0.0 
+cf install-plugin /home/vcap/app/bin/cf-drain-cli-linux -f
+rm -f /home/vcap/app/bin/cf-drain-cli-linux 
+cf install-plugin /home/vcap/app/bin/log-cache-cf-plugin-linux -f
+rm -f /home/vcap/app/bin/log-cache-cf-plugin-linux 
 cf api api.run.pivotal.io
-#export GEM_HOME=/home/vcap/app/bin/rubygems/gems
-#export PATH=$PATH:/home/vcap/app/bin/rubygems/gems/bin
 pushd /home/vcap/app/bin
-#if [ ! -d "/home/vcap/app/bin/jdk-11.0.1" ]; then
 if [ ! -d "/home/vcap/app/bin/jdk-12.0.1" ]; then
   echo      EXTRACTING JVM / GFSH 
-  #tar zxf /home/vcap/app/bin/openjdk-11.0.1_linux-x64_bin.tar.gz
   tar zxf /home/vcap/app/bin/openjdk-12.0.1_linux-x64_bin.tar.gz
+  rm -f /home/vcap/app/bin/openjdk-12.0.1_linux-x64_bin.tar.gz
 fi
-#if [ ! -d "/home/vcap/app/bin/pivotal-gemfire-9.3.0" ]; then
+if [ ! -d "/home/vcap/app/bin/pivotal-gemfire-9.6.2" ]; then
+  tar zxf /home/vcap/app/bin/pivotal-gemfire-9.6.2.tgz
+  rm -f /home/vcap/app/bin/pivotal-gemfire-9.6.2.tgz
+fi
+if [ ! -d "/home/vcap/app/bin/pivotal-gemfire-9.7.2" ]; then
+  tar zxf /home/vcap/app/bin/pivotal-gemfire-9.7.2.tgz
+  rm -f /home/vcap/app/bin/pivotal-gemfire-9.7.2.tgz
+fi
 if [ ! -d "/home/vcap/app/bin/pivotal-gemfire-9.8.1" ]; then
-  #tar zxf /home/vcap/app/bin/pivotal-gemfire-9.3.0.tgz
   tar zxf /home/vcap/app/bin/pivotal-gemfire-9.8.1.tgz
-  #echo      EXTRACTING RUBYGEMS for UAAC
-  #tar zxf /home/vcap/app/bin/rubygems.tgz
+  rm -f /home/vcap/app/bin/pivotal-gemfire-9.8.1.tgz
 fi
 popd
 export JAVA_HOME=/home/vcap/app/bin/jdk-12.0.1
 export PATH=$PATH:$JAVA_HOME/bin
-#export PATH=$PATH:/home/vcap/app/bin/pivotal-gemfire-9.3.0/bin
 export PATH=$PATH:/home/vcap/app/bin/pivotal-gemfire-9.8.1/bin
+alias gfsh98='PATH=/home/vcap/app/bin/pivotal-gemfire-9.8.1/bin:$PATH gfsh'
+alias gfsh97='PATH=/home/vcap/app/bin/pivotal-gemfire-9.7.2/bin:$PATH gfsh'
+alias gfsh96='PATH=/home/vcap/app/bin/pivotal-gemfire-9.6.2/bin:$PATH gfsh'
+alias uaac=/home/vcap/app/bin/uaa-cli
 export GF_JAVA=/home/vcap/app/bin/jdk-12.0.1/bin/java
 if [ ! -d "/home/vcap/app/bin/libs/usr/lib/x86_64-linux-gnu" ]; then
   echo      EXTRACTING MYSQL-SHELL
@@ -47,7 +64,7 @@ clear
 banner "PCF Shell"
 echo "alpha v0.3"
 echo
-echo "cf-cli, cf-top, cf local, cf bg-restage, pks-cli, kubectl, om-cli, bosh, gfsh, mysqlsh, fly-cli, uaa-cli  - all ready to rock"
+echo "cf-cli, cf-top, cf local, cf bg-restage, SchedulerForPCF-cli, SCDF-cli, logCache-cli, cf-drain, cf mysql-tools, pks-cli, kubectl, om-cli, bosh, gfsh (gfsh98, gfsh97, gfsh96), mysqlsh, fly-cli, uaac  - all ready to rock"
 echo
 echo "setpassword" to change this instance password.
 echo "logoff" to reset this instance.
