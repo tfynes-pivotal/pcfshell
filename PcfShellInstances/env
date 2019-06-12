@@ -4,22 +4,38 @@ echo      INSTALLING CF CLI
 #export CF_HOME=$(mktemp -d)
 export TERM=xterm
 export TMPDIR=/tmp
-cf install-plugin /home/vcap/app/bin/top-plugin-linux64 -f
-rm -f /home/vcap/app/bin/top-plugin-linux64 
-cf install-plugin /home/vcap/app/bin/cflocal-0.19.0-linux -f
-rm -f /home/vcap/app/bin/cflocal-0.19.0-linux 
-cf install-plugin /home/vcap/app/bin/mysql-plugin-linux-amd64 -f
-rm -f /home/vcap/app/bin/mysql-plugin-linux-amd64 
-cf install-plugin /home/vcap/app/bin/cf-plugin-bg-restage_linux_amd64 -f
-rm -f /home/vcap/app/bin/cf-plugin-bg-restage_linux_amd64 
-cf install-plugin /home/vcap/app/bin/scheduler-for-pcf-cliplugin-linux64-binary-1.1.0 -f
-rm -f /home/vcap/app/bin/scheduler-for-pcf-cliplugin-linux64-binary-1.1.0 
-cf install-plugin /home/vcap/app/bin/spring-cloud-dataflow-for-pcf-cli-plugin-linux-386-1.0.0 -f
-rm -f /home/vcap/app/bin/spring-cloud-dataflow-for-pcf-cli-plugin-linux-386-1.0.0 
-cf install-plugin /home/vcap/app/bin/cf-drain-cli-linux -f
-rm -f /home/vcap/app/bin/cf-drain-cli-linux 
-cf install-plugin /home/vcap/app/bin/log-cache-cf-plugin-linux -f
-rm -f /home/vcap/app/bin/log-cache-cf-plugin-linux 
+if [ ! -f "/home/vcap/.cf/plugins/top" ]; then
+  cf install-plugin /home/vcap/app/bin/top-plugin-linux64 -f
+  rm -f /home/vcap/app/bin/top-plugin-linux64 
+fi
+if [ ! -f "/home/vcap/.cf/plugins/cflocal" ]; then
+  cf install-plugin /home/vcap/app/bin/cflocal-0.19.0-linux -f
+  rm -f /home/vcap/app/bin/cflocal-0.19.0-linux 
+fi
+if [ ! -f "/home/vcap/.cf/plugins/MysqlTools" ]; then
+  cf install-plugin /home/vcap/app/bin/mysql-plugin-linux-amd64 -f
+  rm -f /home/vcap/app/bin/mysql-plugin-linux-amd64 
+fi
+if [ ! -f "/home/vcap/.cf/plugins/bg-restage" ]; then
+  cf install-plugin /home/vcap/app/bin/cf-plugin-bg-restage_linux_amd64 -f
+  rm -f /home/vcap/app/bin/cf-plugin-bg-restage_linux_amd64 
+fi
+if [ ! -f "/home/vcap/.cf/plugins/SchedulerForPCF" ]; then
+  cf install-plugin /home/vcap/app/bin/scheduler-for-pcf-cliplugin-linux64-binary-1.1.0 -f
+  rm -f /home/vcap/app/bin/scheduler-for-pcf-cliplugin-linux64-binary-1.1.0 
+fi
+if [ ! -f "/home/vcap/.cf/plugins/spring-cloud-dataflow-for-pcf-cli-plugin" ]; then
+  cf install-plugin /home/vcap/app/bin/spring-cloud-dataflow-for-pcf-cli-plugin-linux-386-1.0.0 -f
+  rm -f /home/vcap/app/bin/spring-cloud-dataflow-for-pcf-cli-plugin-linux-386-1.0.0 
+fi
+if [ ! -f "/home/vcap/.cf/plugins/drains" ]; then
+  cf install-plugin /home/vcap/app/bin/cf-drain-cli-linux -f
+  rm -f /home/vcap/app/bin/cf-drain-cli-linux 
+fi
+if [ ! -f "/home/vcap/.cf/plugins/log-cache" ]; then
+  cf install-plugin /home/vcap/app/bin/log-cache-cf-plugin-linux -f
+  rm -f /home/vcap/app/bin/log-cache-cf-plugin-linux 
+fi
 cf api api.run.pivotal.io
 pushd /home/vcap/app/bin
 if [ ! -d "/home/vcap/app/bin/jdk-12.0.1" ]; then
