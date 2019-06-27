@@ -78,7 +78,7 @@ export PATH=$PATH:/home/vcap/app/bin/banner
 echo     READY
 clear
 banner "PCF Shell"
-echo "alpha v0.3"
+echo "alpha v0.3     Instance $CF_INSTANCE_INDEX"
 echo
 echo "cf-cli, cf-top, cf local, cf bg-restage, SchedulerForPCF-cli, SCDF-cli, logCache-cli, cf-drain, cf mysql-tools, pks-cli, kubectl, om-cli, bosh, gfsh (gfsh98, gfsh97, gfsh96), mysqlsh, fly-cli, uaac  - all ready to rock"
 echo
