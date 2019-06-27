@@ -1,6 +1,9 @@
 ---
 applications:
 - name: pshelltest
+  routes:
+  - route: pshelltest.homelab.fynesy.com
+  - route: pcfshell.homelab.fynesy.com
   memory: 1024M
   path: target/PcfInstancesRouter-0.0.1-SNAPSHOT.jar
   env:

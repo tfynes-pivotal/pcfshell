@@ -1,8 +1,12 @@
 zuul:
-  routes:
+  routes:   
     primary:
       sensitiveHeaders: Cookie,Set-Cookie
+      path: /instance/**
+      url: http://hr.internal.fynesy.com:8080  
+      stripPrefix: true  
+    web:
       path: /**
-      url: http://hr.internal.fynesy.com:8080      
+      url: forward:/web 
   host:
      socket-timeout-millis: 600000

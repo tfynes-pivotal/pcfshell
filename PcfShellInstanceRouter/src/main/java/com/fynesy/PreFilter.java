@@ -3,6 +3,7 @@ package com.fynesy;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import com.netflix.zuul.ZuulFilter;
@@ -30,38 +31,47 @@ public class PreFilter extends ZuulFilter {
 	
 	@Override
 	public Object run() {
+		String INSTANCE = "instance";
 		
 		
 		RequestContext ctx = RequestContext.getCurrentContext();
-		//String host = ctx.getRouteHost().toString();
 
 		// Get target path (without leading /)
-		String path = ctx.getRequest().getRequestURI().substring(1);
-
-		// Get path prefix (top level context expected to be instance ordinal)
-		String pathPrefix = "";
-		if (path.indexOf("/")> -1)
-			pathPrefix = path.substring(0,path.indexOf("/"));
-		else
-			pathPrefix = path;
+		String requestUri = ctx.getRequest().getRequestURI();
 		
-		// Get path suffix (ie path stripped of prefix)
-		String pathSuffix = path.substring(pathPrefix.length());
-
-		// Inject prefix (ie instance ordinal) with period as target hostname prefix
-		StringBuilder sb = new StringBuilder(targetUrl);
-		sb.insert(targetUrl.indexOf("//")+2,pathPrefix+".");
-		String newTargetUrl = sb.toString();
 		
-		// Override target hostname to have instance ordinal prefix
-		// Strip prefix from path
-		try {
-			ctx.setRouteHost(new URL(newTargetUrl));
-			ctx.set("requestURI", pathSuffix);
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
+		if (requestUri.length() > INSTANCE.length() && requestUri.startsWith("/instance")) {
+			String path = ctx.getRequest().getRequestURI().substring(10);
+			
+			// Get path prefix (top level context expected to be instance ordinal)
+			String pathPrefix = "";
+			if (path.indexOf("/")> -1)
+				pathPrefix = path.substring(0,path.indexOf("/"));
+			else
+				pathPrefix = path;
+			
+			// Get path suffix (ie path stripped of prefix)
+			String pathSuffix = path.substring(pathPrefix.length());
+	
+			// Inject prefix (ie instance ordinal) with period as target hostname prefix
+			StringBuilder sb = new StringBuilder(targetUrl);
+			sb.insert(targetUrl.indexOf("//")+2,pathPrefix+".");
+			String newTargetUrl = sb.toString();
+			
+			// Override target hostname to have instance ordinal prefix
+			// Strip prefix from path
+			try {
+				ctx.setRouteHost(new URL(newTargetUrl));
+				ctx.set("requestURI", pathSuffix);
+			} catch (MalformedURLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		 }
+		
+		
+		
 		return null;
 	}
 }
