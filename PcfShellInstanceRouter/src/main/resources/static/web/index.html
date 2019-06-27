@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;	
+}
+
+</style>
+<script>
+
+
+
+var table = "";
+const width = 10;
+const height = 10;
+const hosturi = window.location.href
+
+function openInNewTab(url) {
+	var win = window.open(url,"_blank");
+	win.focus();
+}
+
+function shells() {
+	table += "<table width = 100%>\n";
+	for (var j = 0; j< height; j++) {
+		table += "<tr>\n";
+		for (var i = 0; i< width; i++) {
+			var ordinal = j*width+i;
+			var thisUrl = hosturi + "instance/" + ordinal;
+			table += "<td><div onclick=openInNewTab(\"" + thisUrl + "\");>SHELL " + ordinal + "</div>";
+		}
+		table += "</tr>\n"
+	}
+	table += "</table>\n";
+	document.getElementById("shells").innerHTML = table;
+
+}
+
+</script>
+</head>
+<body onload="shells()">
+	<h1 style="text-align: center;"><span style="color: #5e9ca0;">PCF SHELL</span></h1>
+	<h1 style="color: #5e9ca0;"><span style="font-size: 14px;"><span style="color: #2e6c80;">Welcome to PCFShell</span></span></h1>
+	<h1 style="color: #5e9ca0;"><span style="font-size: 14px;">PCFShell is an administrative "jumpbox as a service", presenting a linux terminal that runs inside any browser.&nbsp;</span></h1>
+	
+	<p>Usage:</p>
+	<p>Select a SHELL instance below: Default username=pcfuser and default password=-------</p>
+	<p>Be sure to 'setpassword' before using shell to log into any system.</p>
+	<p>Remember your instance number and type 'logoff' when finished to reset it back to default login and wipe any changes you've made.</p>
+	<h2 style="color: #2e6c80;">&nbsp;</h2>
+	<p><strong>&nbsp;</strong></p>
+	<hr/>
+	<p id="shells">.</p>
+	<hr/>
+</body>
+</html>
