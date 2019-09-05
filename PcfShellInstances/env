@@ -71,6 +71,9 @@ if [ ! -d "/home/vcap/app/bin/libs/usr/lib/x86_64-linux-gnu" ]; then
   dpkg -x /home/vcap/app/bin/libs/whois_5.4.2_amd64.deb /home/vcap/app/bin/libs
   #dpkg -x /home/vcap/app/bin/libs/mysql-shell_1.0.11-1ubuntu14.04_amd64.deb /home/vcap/app/bin/libs
   dpkg -x /home/vcap/app/bin/libs/mysql-shell_8.0.16-1debian9_amd64.deb /home/vcap/app/bin/libs
+  dpkg -x /home/vcap/app/bin/libs/libevent-2.0-5_2.0.21-stable-2ubuntu0.16.04.1_amd64.deb /home/vcap/app/bin/libs
+  dpkg -x /home/vcap/app/bin/libs/libutempter0_1.1.6-3_amd64.deb /home/vcap/app/bin/libs
+
 fi
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/vcap/app/bin/libs/usr/lib/x86_64-linux-gnu
 export PATH=$PATH:/home/vcap/app/bin/libs/usr/bin
@@ -80,7 +83,7 @@ clear
 banner "PCF Shell"
 echo "alpha v0.3     Instance $CF_INSTANCE_INDEX"
 echo
-echo "cf-cli, cf-top, cf local, cf bg-restage, SchedulerForPCF-cli, SCDF-cli, logCache-cli, cf-drain, cf mysql-tools, pks-cli, kubectl, om-cli, bosh, gfsh (gfsh98, gfsh97, gfsh96), mysqlsh, fly-cli, uaac  - all ready to rock"
+echo "cf-cli, cf-top, cf local, cf bg-restage, SchedulerForPCF-cli, SCDF-cli, logCache-cli, cf-drain, cf mysql-tools, pks-cli, kubectl, om-cli, bosh, gfsh (gfsh98, gfsh97, gfsh96), mysqlsh, fly-cli, uaac, tmux  - all ready to rock"
 echo
 echo "setpassword" to change this instance password.
 echo "logoff" to reset this instance.
