@@ -1,8 +1,8 @@
 ---
 applications:
-- name: pshelltest
-  routes:
-  - route: pcfshell.cfapps.io
+- name: pcfshell
+#  routes:
+#  - route: pcfshell.cfapps.io
   memory: 1024M
   path: target/PcfInstancesRouter-0.0.1-SNAPSHOT.jar
   env:
