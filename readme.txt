@@ -38,7 +38,9 @@ Auto deploy scaled mode with 'setupPcfShell.sh' - ensure space-developer has per
 pushd PcfShellRouter
 mvn package
 popd
+setupPcfShell.sh <shellname> <instance-count>
 
+Note if more than 2gb disk required by instance, execute cf scale command on that app.
 
 Scaled mode -
 	Push PcfShellInstances app to an org/space
