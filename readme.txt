@@ -24,8 +24,21 @@ git
 jq
 pks
 
+tmux
+
+javac (v12)
+mvn
+gradle
+
 Single instance mode - just push 'PcfShellInstances' to an org/space - NOTE - modify PcfShellInstances/bin/haproxy/haproxy.conf to ensure your default password is unique
 			default username/password - pcfuser / pcfpass
+
+
+Auto deploy scaled mode with 'setupPcfShell.sh' - ensure space-developer has permissions to set cf networking policies. Target cf foundtaion and space. 
+pushd PcfShellRouter
+mvn package
+popd
+
 
 Scaled mode -
 	Push PcfShellInstances app to an org/space
@@ -44,5 +57,8 @@ NOTE: OpenJDK and PiotalGemfire not included;
 		pivotal-gemfire-9.8.1.tgz 
 		pivotal-gemfire-9.7.2.tgz 
 		pivotal-gemfire-9.6.2.tgz 
+		gradle-5.6.2-bin.zip
 
 Download these assets and them to the PcfShellInstances/bin folder
+
+

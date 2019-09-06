@@ -1,4 +1,4 @@
-export PATH=$PATH:/home/vcap/app/bin 
+export PATH=$PATH:/home/vcap/app/bin
 echo **** INITIALIZING SHELL ****
 echo      INSTALLING CF CLI
 #export CF_HOME=$(mktemp -d)
@@ -6,40 +6,40 @@ export TERM=xterm
 export TMPDIR=/tmp
 if [ ! -f "/home/vcap/.cf/plugins/top" ]; then
   cf install-plugin /home/vcap/app/bin/top-plugin-linux64 -f
-  rm -f /home/vcap/app/bin/top-plugin-linux64 
+  rm -f /home/vcap/app/bin/top-plugin-linux64
 fi
 if [ ! -f "/home/vcap/.cf/plugins/cflocal" ]; then
   cf install-plugin /home/vcap/app/bin/cflocal-0.19.0-linux -f
-  rm -f /home/vcap/app/bin/cflocal-0.19.0-linux 
+  rm -f /home/vcap/app/bin/cflocal-0.19.0-linux
 fi
 if [ ! -f "/home/vcap/.cf/plugins/MysqlTools" ]; then
   cf install-plugin /home/vcap/app/bin/mysql-plugin-linux-amd64 -f
-  rm -f /home/vcap/app/bin/mysql-plugin-linux-amd64 
+  rm -f /home/vcap/app/bin/mysql-plugin-linux-amd64
 fi
 if [ ! -f "/home/vcap/.cf/plugins/bg-restage" ]; then
   cf install-plugin /home/vcap/app/bin/cf-plugin-bg-restage_linux_amd64 -f
-  rm -f /home/vcap/app/bin/cf-plugin-bg-restage_linux_amd64 
+  rm -f /home/vcap/app/bin/cf-plugin-bg-restage_linux_amd64
 fi
 if [ ! -f "/home/vcap/.cf/plugins/SchedulerForPCF" ]; then
   cf install-plugin /home/vcap/app/bin/scheduler-for-pcf-cliplugin-linux64-binary-1.1.0 -f
-  rm -f /home/vcap/app/bin/scheduler-for-pcf-cliplugin-linux64-binary-1.1.0 
+  rm -f /home/vcap/app/bin/scheduler-for-pcf-cliplugin-linux64-binary-1.1.0
 fi
 if [ ! -f "/home/vcap/.cf/plugins/spring-cloud-dataflow-for-pcf-cli-plugin" ]; then
   cf install-plugin /home/vcap/app/bin/spring-cloud-dataflow-for-pcf-cli-plugin-linux-386-1.0.0 -f
-  rm -f /home/vcap/app/bin/spring-cloud-dataflow-for-pcf-cli-plugin-linux-386-1.0.0 
+  rm -f /home/vcap/app/bin/spring-cloud-dataflow-for-pcf-cli-plugin-linux-386-1.0.0
 fi
 if [ ! -f "/home/vcap/.cf/plugins/drains" ]; then
   cf install-plugin /home/vcap/app/bin/cf-drain-cli-linux -f
-  rm -f /home/vcap/app/bin/cf-drain-cli-linux 
+  rm -f /home/vcap/app/bin/cf-drain-cli-linux
 fi
 if [ ! -f "/home/vcap/.cf/plugins/log-cache" ]; then
   cf install-plugin /home/vcap/app/bin/log-cache-cf-plugin-linux -f
-  rm -f /home/vcap/app/bin/log-cache-cf-plugin-linux 
+  rm -f /home/vcap/app/bin/log-cache-cf-plugin-linux
 fi
 cf api api.run.pivotal.io
 pushd /home/vcap/app/bin
 if [ ! -d "/home/vcap/app/bin/jdk-12.0.1" ]; then
-  echo      EXTRACTING JVM / GFSH 
+  echo      EXTRACTING JVM / GFSH
   tar zxf /home/vcap/app/bin/openjdk-12.0.1_linux-x64_bin.tar.gz
   rm -f /home/vcap/app/bin/openjdk-12.0.1_linux-x64_bin.tar.gz
 fi
@@ -55,6 +55,15 @@ if [ ! -d "/home/vcap/app/bin/pivotal-gemfire-9.8.1" ]; then
   tar zxf /home/vcap/app/bin/pivotal-gemfire-9.8.1.tgz
   rm -f /home/vcap/app/bin/pivotal-gemfire-9.8.1.tgz
 fi
+if [ ! -d "/home/vcap/app/bin/apache-maven-3.6.2-bin.tar.gz" ]; then
+  tar zxf /home/vcap/app/bin/apache-maven-3.6.2-bin.tar.gz
+  rm -f /home/vcap/app/bin/apache-maven-3.6.2-bin.tar.gz
+fi
+if [ ! -d "/home/vcap/app/bin/gradle-5.6.2-bin.zip" ]; then
+  unzip /home/vcap/app/bin/gradle-5.6.2-bin.zip
+  rm -f /home/vcap/app/bin/gradle-5.6.2-bin.zip
+fi
+
 popd
 export JAVA_HOME=/home/vcap/app/bin/jdk-12.0.1
 export PATH=$PATH:$JAVA_HOME/bin
@@ -78,6 +87,10 @@ fi
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/vcap/app/bin/libs/usr/lib/x86_64-linux-gnu
 export PATH=$PATH:/home/vcap/app/bin/libs/usr/bin
 export PATH=$PATH:/home/vcap/app/bin/banner
+export M2_HOME=/home/vcap/app/bin/apache-maven-3.6.2
+export PATH=$PATH:${M2_HOME}/bin
+export GRADLE_HOME=/home/vcap/app/bin/gradle-5.6.2
+export PATH=$PATH:${GRADLE_HOME}/bin
 echo     READY
 clear
 banner "PCF Shell"
