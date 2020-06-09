@@ -9,8 +9,8 @@ if [ ! -f "/home/vcap/.cf/plugins/top" ]; then
   rm -f /home/vcap/app/bin/top-plugin-linux64
 fi
 if [ ! -f "/home/vcap/.cf/plugins/cflocal" ]; then
-  cf install-plugin /home/vcap/app/bin/cflocal-0.19.0-linux -f
-  rm -f /home/vcap/app/bin/cflocal-0.19.0-linux
+  cf install-plugin /home/vcap/app/bin/cflocal-0.20.0-linux -f
+  rm -f /home/vcap/app/bin/cflocal-0.20.0-linux
 fi
 if [ ! -f "/home/vcap/.cf/plugins/MysqlTools" ]; then
   cf install-plugin /home/vcap/app/bin/mysql-plugin-linux-amd64 -f
@@ -21,12 +21,12 @@ if [ ! -f "/home/vcap/.cf/plugins/bg-restage" ]; then
   rm -f /home/vcap/app/bin/cf-plugin-bg-restage_linux_amd64
 fi
 if [ ! -f "/home/vcap/.cf/plugins/SchedulerForPCF" ]; then
-  cf install-plugin /home/vcap/app/bin/scheduler-for-pcf-cliplugin-linux64-binary-1.1.0 -f
-  rm -f /home/vcap/app/bin/scheduler-for-pcf-cliplugin-linux64-binary-1.1.0
+  cf install-plugin /home/vcap/app/bin/scheduler-for-pcf-cliplugin-linux64-binary-1.2.1-build.4 -f
+  rm -f /home/vcap/app/bin/scheduler-for-pcf-cliplugin-linux64-binary-1.2.1-build.4
 fi
 if [ ! -f "/home/vcap/.cf/plugins/spring-cloud-dataflow-for-pcf-cli-plugin" ]; then
-  cf install-plugin /home/vcap/app/bin/spring-cloud-dataflow-for-pcf-cli-plugin-linux-386-1.0.0 -f
-  rm -f /home/vcap/app/bin/spring-cloud-dataflow-for-pcf-cli-plugin-linux-386-1.0.0
+  cf install-plugin /home/vcap/app/bin/spring-cloud-dataflow-for-pcf-cli-plugin-linux-amd64-1.0.2 -f
+  rm -f /home/vcap/app/bin/spring-cloud-dataflow-for-pcf-cli-plugin-linux-amd64-1.0.2
 fi
 if [ ! -f "/home/vcap/.cf/plugins/drains" ]; then
   cf install-plugin /home/vcap/app/bin/cf-drain-cli-linux -f
@@ -47,29 +47,39 @@ if [ ! -d "/home/vcap/app/bin/pivotal-gemfire-9.6.2" ]; then
   tar zxf /home/vcap/app/bin/pivotal-gemfire-9.6.2.tgz
   rm -f /home/vcap/app/bin/pivotal-gemfire-9.6.2.tgz
 fi
-if [ ! -d "/home/vcap/app/bin/pivotal-gemfire-9.7.2" ]; then
-  tar zxf /home/vcap/app/bin/pivotal-gemfire-9.7.2.tgz
-  rm -f /home/vcap/app/bin/pivotal-gemfire-9.7.2.tgz
+if [ ! -d "/home/vcap/app/bin/pivotal-gemfire-9.7.6" ]; then
+  tar zxf /home/vcap/app/bin/pivotal-gemfire-9.7.6.tgz
+  rm -f /home/vcap/app/bin/pivotal-gemfire-9.7.6.tgz
 fi
-if [ ! -d "/home/vcap/app/bin/pivotal-gemfire-9.8.1" ]; then
-  tar zxf /home/vcap/app/bin/pivotal-gemfire-9.8.1.tgz
-  rm -f /home/vcap/app/bin/pivotal-gemfire-9.8.1.tgz
+if [ ! -d "/home/vcap/app/bin/pivotal-gemfire-9.8.8" ]; then
+  tar zxf /home/vcap/app/bin/pivotal-gemfire-9.8.8.tgz
+  rm -f /home/vcap/app/bin/pivotal-gemfire-9.8.8.tgz
 fi
-if [ ! -d "/home/vcap/app/bin/apache-maven-3.6.2-bin.tar.gz" ]; then
-  tar zxf /home/vcap/app/bin/apache-maven-3.6.2-bin.tar.gz
-  rm -f /home/vcap/app/bin/apache-maven-3.6.2-bin.tar.gz
+if [ ! -d "/home/vcap/app/bin/pivotal-gemfire-9.9.2" ]; then
+  tar zxf /home/vcap/app/bin/pivotal-gemfire-9.9.2.tgz
+  rm -f /home/vcap/app/bin/pivotal-gemfire-9.9.2.tgz
 fi
-if [ ! -d "/home/vcap/app/bin/gradle-5.6.2-bin.zip" ]; then
-  unzip /home/vcap/app/bin/gradle-5.6.2-bin.zip
-  rm -f /home/vcap/app/bin/gradle-5.6.2-bin.zip
+if [ ! -d "/home/vcap/app/bin/pivotal-gemfire-9.10.1" ]; then
+  tar zxf /home/vcap/app/bin/pivotal-gemfire-9.10.1.tgz
+  rm -f /home/vcap/app/bin/pivotal-gemfire-9.10.1.tgz
+fi
+if [ ! -d "/home/vcap/app/bin/apache-maven-3.6.3-bin.tar.gz" ]; then
+  tar zxf /home/vcap/app/bin/apache-maven-3.6.3-bin.tar.gz
+  rm -f /home/vcap/app/bin/apache-maven-3.6.3-bin.tar.gz
+fi
+if [ ! -d "/home/vcap/app/bin/gradle-6.5-bin.zip" ]; then
+  unzip /home/vcap/app/bin/gradle-6.5-bin.zip
+  rm -f /home/vcap/app/bin/gradle-6.5-bin.zip
 fi
 
 popd
 export JAVA_HOME=/home/vcap/app/bin/jdk-12.0.1
 export PATH=$PATH:$JAVA_HOME/bin
-export PATH=$PATH:/home/vcap/app/bin/pivotal-gemfire-9.8.1/bin
-alias gfsh98='PATH=/home/vcap/app/bin/pivotal-gemfire-9.8.1/bin:$PATH gfsh'
-alias gfsh97='PATH=/home/vcap/app/bin/pivotal-gemfire-9.7.2/bin:$PATH gfsh'
+export PATH=$PATH:/home/vcap/app/bin/pivotal-gemfire-9.10.1/bin
+alias gfsh910='PATH=/home/vcap/app/bin/pivotal-gemfire-9.10.1/bin:$PATH gfsh'
+alias gfsh99='PATH=/home/vcap/app/bin/pivotal-gemfire-9.9.2/bin:$PATH gfsh'
+alias gfsh98='PATH=/home/vcap/app/bin/pivotal-gemfire-9.8.8/bin:$PATH gfsh'
+alias gfsh97='PATH=/home/vcap/app/bin/pivotal-gemfire-9.7.6/bin:$PATH gfsh'
 alias gfsh96='PATH=/home/vcap/app/bin/pivotal-gemfire-9.6.2/bin:$PATH gfsh'
 alias uaac=/home/vcap/app/bin/uaa-cli
 export GF_JAVA=/home/vcap/app/bin/jdk-12.0.1/bin/java
@@ -78,8 +88,7 @@ if [ ! -d "/home/vcap/app/bin/libs/usr/lib/x86_64-linux-gnu" ]; then
   dpkg -x /home/vcap/app/bin/libs/libprotobuf8_2.5.0-9ubuntu1_amd64.deb /home/vcap/app/bin/libs
   dpkg -x /home/vcap/app/bin/libs/libpython2.7_2.7.6-8ubuntu0.4_amd64.deb /home/vcap/app/bin/libs
   dpkg -x /home/vcap/app/bin/libs/whois_5.4.2_amd64.deb /home/vcap/app/bin/libs
-  #dpkg -x /home/vcap/app/bin/libs/mysql-shell_1.0.11-1ubuntu14.04_amd64.deb /home/vcap/app/bin/libs
-  dpkg -x /home/vcap/app/bin/libs/mysql-shell_8.0.16-1debian9_amd64.deb /home/vcap/app/bin/libs
+  dpkg -x /home/vcap/app/bin/libs/mysql-shell_8.0.20-1debian9_amd64.deb /home/vcap/app/bin/libs
   dpkg -x /home/vcap/app/bin/libs/libevent-2.0-5_2.0.21-stable-2ubuntu0.16.04.1_amd64.deb /home/vcap/app/bin/libs
   dpkg -x /home/vcap/app/bin/libs/libutempter0_1.1.6-3_amd64.deb /home/vcap/app/bin/libs
   dpkg -x /home/vcap/app/bin/libs/postgresql-client-10_10.10-0ubuntu0.18.04.1_amd64.deb /home/vcap/app/bin/libs
@@ -89,9 +98,9 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/vcap/app/bin/libs/usr/lib/x86_64-l
 export PATH=$PATH:/home/vcap/app/bin/libs/usr/bin
 export PATH=$PATH:/home/vcap/app/bin/libs/usr/lib/postgresql/10/bin
 export PATH=$PATH:/home/vcap/app/bin/banner
-export M2_HOME=/home/vcap/app/bin/apache-maven-3.6.2
+export M2_HOME=/home/vcap/app/bin/apache-maven-3.6.3
 export PATH=$PATH:${M2_HOME}/bin
-export GRADLE_HOME=/home/vcap/app/bin/gradle-5.6.2
+export GRADLE_HOME=/home/vcap/app/bin/gradle-6.5
 export PATH=$PATH:${GRADLE_HOME}/bin
 echo     READY
 clear
