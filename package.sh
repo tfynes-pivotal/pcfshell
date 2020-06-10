@@ -5,10 +5,10 @@ pushd pcfshell/PcfShellInstanceRouter
 mvn package
 popd
 zip -r pcfshell-06-10-20.zip ./pcfshell/*
-rm -fr ./pcfshell
 mkdir x
+cp ./pcfshell/setupPcfShell.sh ./x/
+rm -fr ./pcfshell
 cd x
 cp ../pcfshell-06-10-20.zip ./pcfshell.zip
-cp ../pcfshell-forGH/setupPcfShell.sh ./
 
 
