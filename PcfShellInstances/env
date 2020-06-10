@@ -1,5 +1,41 @@
 export PATH=$PATH:/home/vcap/app/bin
 echo **** INITIALIZING SHELL ****
+echo   Unzipping binaries
+cd /home/vcap/app/bin
+unzip bosh.zip
+rm bosh.zip
+unzip cf.zip
+rm cf.zip
+unzip cf7.zip
+rm cf7.zip
+unzip cflocal-0.20.0-linux.zip
+rm cflocal-0.20.0-linux.zip
+unzip clusterctl.zip
+rm clusterctl.zip
+unzip fly.zip
+rm fly.zip
+unzip helm.zip
+rm helm.zip
+unzip k9s.zip
+rm k9s.zip
+unzip kubectl.zip
+rm kubectl.zip
+unzip log-cache-cf-plugin-linux.zip
+rm log-cache-cf-plugin-linux.zip
+unzip mc.zip
+rm mc.zip
+unzip mysql-plugin-linux-amd64.zip
+rm mysql-plugin-linux-amd64.zip
+unzip om.zip
+rm om.zip
+unzip pks.zip
+rm pks.zip
+unzip scheduler-for-pcf-cliplugin-linux64-binary-1.2.1-build.4.zip
+rm scheduler-for-pcf-cliplugin-linux64-binary-1.2.1-build.4.zip
+unzip tkgi.zip
+rm tkgi.zip
+unzip top-plugin-linux64.zip
+rm top-plugin-linux64.zip
 echo      INSTALLING CF CLI
 #export CF_HOME=$(mktemp -d)
 export TERM=xterm
