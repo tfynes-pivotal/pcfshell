@@ -3,6 +3,7 @@
 Useful commands
 
 cf-cli
+cf7-cli
 cf top
 cf bg-restage
 cf mysql-tools
@@ -12,21 +13,26 @@ cf log-cache plugin
 cf SchedulerForPCF plugin
 cf dataflow-shell
 
-credhub
-kubectl
-om-cli
 bosh
-gfsh (gfsh98, gfsh97, gfsh96)
-mysqlsh
-fly-cli
+om-cli
+credhub-cli
 uaa-cli
-git
+fly-cli
+
+tkgi-cli (pks successor)
+kubectl
+k9s
+helm
+yq
 jq
-pks
+clusterctl
+
+gfsh (gfsh910, gfsh99, gfsh98, gfsh97)
+mysqlsh
 
 tmux
-
 javac (v12)
+git
 mvn
 gradle
 
@@ -56,10 +62,11 @@ User should call 'logout' script to reset instance at end of session.
 Multiple gfsh versions for backward compatibility - gfsh98, gfsh97, gfsh96
 NOTE: OpenJDK and PiotalGemfire not included;	
 		openjdk-12.0.1_linux-x64_bin.tar.gz 
-		pivotal-gemfire-9.8.1.tgz 
-		pivotal-gemfire-9.7.2.tgz 
-		pivotal-gemfire-9.6.2.tgz 
-		gradle-5.6.2-bin.zip
+		pivotal-gemfire-9.10.1.tgz 
+		pivotal-gemfire-9.9.2.tgz 
+		pivotal-gemfire-9.8.8.tgz 
+		pivotal-gemfire-9.7.6.tgz 
+		gradle-6.5-bin.zip
 
 Download these assets and them to the PcfShellInstances/bin folder
 
