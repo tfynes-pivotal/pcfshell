@@ -79,10 +79,10 @@ if [ ! -d "/home/vcap/app/bin/jdk-12.0.1" ]; then
   tar zxf /home/vcap/app/bin/openjdk-12.0.1_linux-x64_bin.tar.gz
   rm -f /home/vcap/app/bin/openjdk-12.0.1_linux-x64_bin.tar.gz
 fi
-if [ ! -d "/home/vcap/app/bin/pivotal-gemfire-9.6.2" ]; then
-  tar zxf /home/vcap/app/bin/pivotal-gemfire-9.6.2.tgz
-  rm -f /home/vcap/app/bin/pivotal-gemfire-9.6.2.tgz
-fi
+#if [ ! -d "/home/vcap/app/bin/pivotal-gemfire-9.6.2" ]; then
+  #tar zxf /home/vcap/app/bin/pivotal-gemfire-9.6.2.tgz
+  #rm -f /home/vcap/app/bin/pivotal-gemfire-9.6.2.tgz
+#fi
 if [ ! -d "/home/vcap/app/bin/pivotal-gemfire-9.7.6" ]; then
   tar zxf /home/vcap/app/bin/pivotal-gemfire-9.7.6.tgz
   rm -f /home/vcap/app/bin/pivotal-gemfire-9.7.6.tgz
@@ -116,7 +116,7 @@ alias gfsh910='PATH=/home/vcap/app/bin/pivotal-gemfire-9.10.1/bin:$PATH gfsh'
 alias gfsh99='PATH=/home/vcap/app/bin/pivotal-gemfire-9.9.2/bin:$PATH gfsh'
 alias gfsh98='PATH=/home/vcap/app/bin/pivotal-gemfire-9.8.8/bin:$PATH gfsh'
 alias gfsh97='PATH=/home/vcap/app/bin/pivotal-gemfire-9.7.6/bin:$PATH gfsh'
-alias gfsh96='PATH=/home/vcap/app/bin/pivotal-gemfire-9.6.2/bin:$PATH gfsh'
+#alias gfsh96='PATH=/home/vcap/app/bin/pivotal-gemfire-9.6.2/bin:$PATH gfsh'
 alias uaac=/home/vcap/app/bin/uaa-cli
 export GF_JAVA=/home/vcap/app/bin/jdk-12.0.1/bin/java
 if [ ! -d "/home/vcap/app/bin/libs/usr/lib/x86_64-linux-gnu" ]; then
@@ -143,7 +143,7 @@ clear
 banner "PCF Shell"
 echo "alpha v0.4     Instance $CF_INSTANCE_INDEX"
 echo
-echo "cf-cli, cf-top, cf local, cf bg-restage, SchedulerForPCF-cli, SCDF-cli, logCache-cli, cf-drain, cf mysql-tools, pks-cli, kubectl, om-cli, bosh, gfsh (gfsh98, gfsh97, gfsh96), mysqlsh, fly-cli, uaac, tmux, mvn, gradle, javac, psql  - all ready to rock"
+echo "cf-cli, cf7-cli cf-top, cf local, cf bg-restage, SchedulerForPCF-cli, SCDF-cli, logCache-cli, cf-drain, cf mysql-tools, cf dfsh (dataflow shell), tkgi(pks)-cli, kubectl, k9s, helm, yq, jq, git, clusterctl, om-cli, bosh, gfsh (gfsh910, gfsh99, gfsh98, gfsh97), mysqlsh, fly-cli, uaac, tmux, mvn, gradle, javac, psql  - all ready to rock"
 echo
 echo "setpassword" to change this instance password.
 echo "logoff" to reset this instance.
