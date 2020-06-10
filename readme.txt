@@ -61,12 +61,13 @@ User should call 'logout' script to reset instance at end of session.
 
 Multiple gfsh versions for backward compatibility - gfsh98, gfsh97, gfsh96
 NOTE: OpenJDK and PiotalGemfire not included;	
-		openjdk-12.0.1_linux-x64_bin.tar.gz 
-		pivotal-gemfire-9.10.1.tgz 
-		pivotal-gemfire-9.9.2.tgz 
-		pivotal-gemfire-9.8.8.tgz 
-		pivotal-gemfire-9.7.6.tgz 
 		gradle-6.5-bin.zip
+		openjdk-12.0.1_linux-x64_bin.tar.gz
+		pivotal-gemfire-9.10.1.tgz
+		pivotal-gemfire-9.6.2.tgz
+		pivotal-gemfire-9.7.6.tgz
+		pivotal-gemfire-9.8.8.tgz
+		pivotal-gemfire-9.9.2.tgz
 
 Download these assets and them to the PcfShellInstances/bin folder
 
