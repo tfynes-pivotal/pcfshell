@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # basic script for assembling a distributable zip inclusive of all offline assets
-cp -R ./pcfshell-forGH ./pcfshell
+#cp -R ./pcfshell-forGH ./pcfshell
 cp pcfshell-offline-assets/* ./pcfshell/PcfShellInstances/bin
 pushd pcfshell/PcfShellInstanceRouter
 mvn package
