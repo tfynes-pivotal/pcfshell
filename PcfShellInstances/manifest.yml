@@ -5,5 +5,3 @@ applications:
   disk_quota: 2G
   buildpacks: 
   - binary_buildpack
-#  routes:
-#  - route: pcfshellinstances.apps.internal

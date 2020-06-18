@@ -83,10 +83,10 @@ fi
   #tar zxf /home/vcap/app/bin/pivotal-gemfire-9.6.2.tgz
   #rm -f /home/vcap/app/bin/pivotal-gemfire-9.6.2.tgz
 #fi
-if [ ! -d "/home/vcap/app/bin/pivotal-gemfire-9.7.6" ]; then
-  tar zxf /home/vcap/app/bin/pivotal-gemfire-9.7.6.tgz
-  rm -f /home/vcap/app/bin/pivotal-gemfire-9.7.6.tgz
-fi
+#if [ ! -d "/home/vcap/app/bin/pivotal-gemfire-9.7.6" ]; then
+  #tar zxf /home/vcap/app/bin/pivotal-gemfire-9.7.6.tgz
+  #rm -f /home/vcap/app/bin/pivotal-gemfire-9.7.6.tgz
+#fi
 if [ ! -d "/home/vcap/app/bin/pivotal-gemfire-9.8.8" ]; then
   tar zxf /home/vcap/app/bin/pivotal-gemfire-9.8.8.tgz
   rm -f /home/vcap/app/bin/pivotal-gemfire-9.8.8.tgz
@@ -115,7 +115,7 @@ export PATH=$PATH:/home/vcap/app/bin/pivotal-gemfire-9.10.1/bin
 alias gfsh910='PATH=/home/vcap/app/bin/pivotal-gemfire-9.10.1/bin:$PATH gfsh'
 alias gfsh99='PATH=/home/vcap/app/bin/pivotal-gemfire-9.9.2/bin:$PATH gfsh'
 alias gfsh98='PATH=/home/vcap/app/bin/pivotal-gemfire-9.8.8/bin:$PATH gfsh'
-alias gfsh97='PATH=/home/vcap/app/bin/pivotal-gemfire-9.7.6/bin:$PATH gfsh'
+#alias gfsh97='PATH=/home/vcap/app/bin/pivotal-gemfire-9.7.6/bin:$PATH gfsh'
 #alias gfsh96='PATH=/home/vcap/app/bin/pivotal-gemfire-9.6.2/bin:$PATH gfsh'
 alias uaac=/home/vcap/app/bin/uaa-cli
 export GF_JAVA=/home/vcap/app/bin/jdk-12.0.1/bin/java
