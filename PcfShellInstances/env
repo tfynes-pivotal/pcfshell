@@ -141,7 +141,7 @@ export PATH=$PATH:${GRADLE_HOME}/bin
 echo     READY
 clear
 banner "PCF Shell"
-echo "alpha v0.4     Instance $CF_INSTANCE_INDEX"
+echo "alpha v0.5     Instance $CF_INSTANCE_INDEX"
 echo
 echo "cf-cli, cf7-cli cf-top, cf local, cf bg-restage, SchedulerForPCF-cli, SCDF-cli, logCache-cli, cf-drain, cf mysql-tools, cf dfsh (dataflow shell), tkgi(pks)-cli, kubectl, k9s, helm, yq, jq, git, clusterctl, om-cli, bosh, gfsh (gfsh910, gfsh99, gfsh98, gfsh97), mysqlsh, fly-cli, uaac, tmux, mvn, gradle, javac, psql  - all ready to rock"
 echo
