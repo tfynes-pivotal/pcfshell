@@ -87,10 +87,10 @@ fi
   #tar zxf /home/vcap/app/bin/pivotal-gemfire-9.7.6.tgz
   #rm -f /home/vcap/app/bin/pivotal-gemfire-9.7.6.tgz
 #fi
-if [ ! -d "/home/vcap/app/bin/pivotal-gemfire-9.8.8" ]; then
-  tar zxf /home/vcap/app/bin/pivotal-gemfire-9.8.8.tgz
-  rm -f /home/vcap/app/bin/pivotal-gemfire-9.8.8.tgz
-fi
+#if [ ! -d "/home/vcap/app/bin/pivotal-gemfire-9.8.8" ]; then
+#  tar zxf /home/vcap/app/bin/pivotal-gemfire-9.8.8.tgz
+#  rm -f /home/vcap/app/bin/pivotal-gemfire-9.8.8.tgz
+#fi
 if [ ! -d "/home/vcap/app/bin/pivotal-gemfire-9.9.2" ]; then
   tar zxf /home/vcap/app/bin/pivotal-gemfire-9.9.2.tgz
   rm -f /home/vcap/app/bin/pivotal-gemfire-9.9.2.tgz
