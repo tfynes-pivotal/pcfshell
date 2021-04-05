@@ -95,9 +95,9 @@ if [ ! -d "/home/vcap/app/bin/pivotal-gemfire-9.9.2" ]; then
   tar zxf /home/vcap/app/bin/pivotal-gemfire-9.9.2.tgz
   rm -f /home/vcap/app/bin/pivotal-gemfire-9.9.2.tgz
 fi
-if [ ! -d "/home/vcap/app/bin/pivotal-gemfire-9.10.1" ]; then
-  tar zxf /home/vcap/app/bin/pivotal-gemfire-9.10.1.tgz
-  rm -f /home/vcap/app/bin/pivotal-gemfire-9.10.1.tgz
+if [ ! -d "/home/vcap/app/bin/pivotal-gemfire-9.10.6" ]; then
+  tar zxf /home/vcap/app/bin/pivotal-gemfire-9.10.6.tgz
+  rm -f /home/vcap/app/bin/pivotal-gemfire-9.10.6.tgz
 fi
 if [ ! -d "/home/vcap/app/bin/apache-maven-3.6.3-bin.tar.gz" ]; then
   tar zxf /home/vcap/app/bin/apache-maven-3.6.3-bin.tar.gz
